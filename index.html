@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,38 +13,158 @@
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles.css">
+    <script src="data.js"></script>
 </head>
+
 <body>
     <!-- NAVBAR DE LA PAGINA -->
     <header id="header-bar">
         <nav id="navbar">
             <a href="#acerca">Acerca de nosotros</a>
-            <a href="#menu">Cafés disponibles</a>    
+            <a href="#menu">Cafés disponibles</a>
+            <a href="#panaderia">Panes y postres disponibles</a>
             <a href="#contacto">Contactanos</a>
         </nav>
     </header>
     <div style=" position: absolute; width: 100%;">
         <!-- SECCION INTRODUCTORIA -->
-        <section id="acerca" style="width:100%;height: 80%;" >
-            <div class="ad-background-img">
-                <img width="100%" height="80%" src="https://rvca738f6h5tbwmj3mxylox3-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/GI_763256517_ParisCafe_Table.jpg" alt="" srcset="">
+        <section id="acerca" style="width:100%;height: 80%;">
+            <div class="simple-background-img">
+                <img width="100%" height="100%"
+                    src="https://rvca738f6h5tbwmj3mxylox3-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/GI_763256517_ParisCafe_Table.jpg"
+                    alt="Le Café Parisien" srcset="">
             </div>
-            <div class="ad-text-container">
-                <span class="ad-space-text">Cafeteria "Le Café Parisien" cuenta con una variedad extensa de cafés y panes hechos en Paris por nuestros panaderos de alta calidad, donde usted podra disfrutar la exquisita gastronomía francesa, Bienveneu à la France !</span>
+            <div class="simple-text-container">
+                <span class="simple-space-text">Cafeteria "Le Café Parisien" cuenta con una variedad extensa de cafés y panes
+                    hechos en Paris por nuestros panaderos de alta calidad, donde usted podra disfrutar la exquisita
+                    gastronomía francesa, Bienveneu à la France !<br />Para mas información, consulte al +33-700-5552-67
+                    <br /> Nos encontramos localizados en 25 Place de la Madeleine Paris </span>
             </div>
         </section>
         <!-- MENU DISPONIBLE -->
         <section id="menu">
-            
+            <span style="display: flex;flex-direction: row;justify-content: center;"><h2 style="font-family:Arizonia;position:absolute;top:0.5rem;z-index:4;font-size:3rem">Deleitate con nuestros cafés!</h2></span>
+            <div class="menu-background-img">
+                <img width="100%" src="https://previews.123rf.com/images/bastinda18/bastinda181508/bastinda18150800012/43421882-modelo-incons%C3%BAtil-de-par%C3%ADs-con-la-torre-eiffel-y-el-caf%C3%A9.jpg" alt="" srcset="">
+            </div>            
+            <div id="menu-cafes" class="menu-container">
+            </div>
+        </section>
+        <!-- PANES Y POSTRES -->
+        <section id="panaderia">
+            <span style="display: flex;flex-direction: row;justify-content: center;"><h2 style="font-family:Arizonia;position:absolute;top:0.5rem;z-index:4;font-size:3rem">Los mejores panes y postres de toda francia!</h2></span>
+            <div class="menu-background-img">
+                <img width="100%" src="https://i.pinimg.com/originals/ab/85/8c/ab858c4baf3f0b119c368e81ed971e53.jpg" alt="bg" srcset="">
+            </div>
+            <div id="menu-panaderia" class="menu-container">
+            </div>
         </section>
         <!-- CONTACTO -->
         <section id="contacto">
-
+            <div class="simple-background-img">
+                <img width="100%" height="100%"
+                    src="https://www.planetware.com/wpimages/2019/05/france-paris-eiffel-tower-visiting-highlights-casual-meal-coffee-break.jpg"
+                    alt="Le Café Parisien" srcset="">
+            </div>
+            <div class="simple-text-container">
+                <span class="simple-space-text">Cafeteria "Le Café Parisien" cuenta con una variedad extensa de cafés y panes
+                    hechos en Paris por nuestros panaderos de alta calidad, donde usted podra disfrutar la exquisita
+                    gastronomía francesa, Bienveneu à la France !<br />Para mas información, consulte al +33-700-5552-67
+                    <br /> Nos encontramos localizados en 25 Place de la Madeleine Paris </span>
+            </div>
         </section>
         <!-- PIE DE PAGINA -->
         <footer>
 
         </footer>
     </div>
+    <script>
+        const menuCafe = document.getElementById('menu-cafes')
+        for (const cafe of cafes) {
+
+            const contenedor = document.createElement('DIV')
+            contenedor.classList.add('menu-item-container')
+
+            const bg = document.createElement('DIV')
+            bg.classList.add('menu-item-bg')
+
+            contenedor.appendChild(bg)
+
+            const contenedorImagen = document.createElement('DIV')
+            contenedorImagen.classList.add('product-photo')
+
+            const imagen = document.createElement('IMG')
+            imagen.setAttribute('src', cafe.imgURL)
+            imagen.setAttribute('alt', cafe.nombre)
+            imagen.setAttribute('width', '100%')
+            imagen.setAttribute('heigth', '100%')
+            imagen.setAttribute('loading', 'lazy')
+
+            contenedorImagen.appendChild(imagen)
+
+            contenedor.appendChild(contenedorImagen)
+
+            const contenedorProducto = document.createElement('DIV')
+            contenedorProducto.classList.add('product-info')
+
+            const nombre = document.createElement('SPAN')
+            nombre.innerHTML = cafe.nombre
+            nombre.classList.add('separar-derecha')
+
+            const precio = document.createElement('SPAN')
+            precio.innerHTML = cafe.precio
+
+            contenedorProducto.appendChild(nombre)
+            contenedorProducto.appendChild(precio)
+
+            contenedor.appendChild(contenedorProducto)
+            menuCafe.appendChild(contenedor)
+        }
+
+        const menuPanaderia = document.getElementById('menu-panaderia')
+
+        for (const postre of panes) {
+
+            const contenedor = document.createElement('DIV')
+            contenedor.classList.add('menu-item-container')
+
+            const bg = document.createElement('DIV')
+            bg.classList.add('menu-item-bg')
+
+            contenedor.appendChild(bg)
+
+            const contenedorImagen = document.createElement('DIV')
+            contenedorImagen.classList.add('product-photo')
+
+            const imagen = document.createElement('IMG')
+            imagen.setAttribute('src', postre.imgURL)
+            imagen.setAttribute('alt', postre.nombre)
+            imagen.setAttribute('width', '100%')
+            imagen.setAttribute('heigth', '100%')
+            imagen.setAttribute('loading', 'lazy')
+
+            contenedorImagen.appendChild(imagen)
+
+            contenedor.appendChild(contenedorImagen)
+
+            const contenedorProducto = document.createElement('DIV')
+            contenedorProducto.classList.add('product-info')
+
+            const nombre = document.createElement('SPAN')
+            nombre.innerHTML = postre.nombre
+            nombre.classList.add('separar-derecha')
+
+            const precio = document.createElement('SPAN')
+            precio.innerHTML = postre.precio
+
+            contenedorProducto.appendChild(nombre)
+            contenedorProducto.appendChild(precio)
+
+            contenedor.appendChild(contenedorProducto)
+            menuPanaderia.appendChild(contenedor)
+        }
+
+    </script>
 </body>
+
 </html>

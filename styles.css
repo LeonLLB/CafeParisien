@@ -6,13 +6,17 @@
     --darkcoffee: #33140A;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin:0;
 }
 
 #header-bar{
     position: fixed;
-    z-index: 2;
+    z-index: 99;
     width: 100%;
     background-color: var(--espresso);
     display:flex;
@@ -20,6 +24,10 @@
     align-items: center;
     border-radius: 0rem 0rem 1rem 1rem;
     box-shadow:0px 5px 5px rgba(47, 47, 47, 0.5);
+}
+
+section{
+    position: relative;
 }
 
 #navbar > * {
@@ -39,20 +47,82 @@
     color: var(--cortado);
 }
 
-#acerca > .ad-background-img  {
+.simple-background-img  {
     width: 100%;
     height: 100vh;
     filter:brightness(50%) blur(3px);
 }
 
-.ad-text-container{
+.menu-background-img  {
+    filter:blur(3px);
+}
+
+.simple-text-container{
     position: absolute;
-    top:30%;
+    top:37.5%;
     text-align: center;
 }
 
-.ad-space-text{
+.simple-space-text{
     font-family: 'Merienda One';
     color:var(--latte);
     font-size:x-large;
+}
+
+.menu-container{
+    margin-top: 4.5rem;
+    width: 100%;
+    position: absolute;
+    top:0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 3rem;
+}
+
+.menu-container > .menu-item-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 100%;
+    height:4rem;
+}
+
+.menu-item-container > .menu-item-bg{
+    border: 5px solid var(--cortado);
+    z-index:1;
+    border-radius: 2rem;
+    position: absolute;
+    width:80%;
+    height:100%;
+    background-color: var(--latte);
+    filter:blur(3px) opacity(80%);
+    box-shadow:5px 10px 5px rgba(47, 47, 47, 0.5);
+}
+
+.menu-item-container > .product-photo{
+    z-index:2;
+    border-radius: 2rem;
+    width:4rem;
+    height:4rem;
+}
+
+.menu-item-container > .product-photo > img{
+    border-radius: 2rem;
+    width:4rem;
+    height:4rem;
+}
+
+.menu-item-container > .product-info{
+    z-index:2;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Cookie', sans-serif;
+    font-size:2.5rem;
+}
+
+.separar-derecha{
+    margin-right:2rem;
 }
