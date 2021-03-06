@@ -1,0 +1,58 @@
+:root{
+    --cortado: #9D6538;
+    --capuccino: #CF9F6E;
+    --latte: #DABE99;
+    --espresso: #652817;
+    --darkcoffee: #33140A;
+}
+
+*{
+    margin:0;
+}
+
+#header-bar{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: var(--espresso);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0rem 0rem 1rem 1rem;
+    box-shadow:0px 5px 5px rgba(47, 47, 47, 0.5);
+}
+
+#navbar > * {
+    font-family:'Arizonia',sans-serif;
+    font-size: 2rem;
+    color: var(--capuccino);
+    transition: color 100ms ease-in-out;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+#navbar > *:hover{
+    color: var(--latte);
+}
+
+#navbar > *:active{
+    color: var(--cortado);
+}
+
+#acerca > .ad-background-img  {
+    width: 100%;
+    height: 100vh;
+    filter:brightness(50%) blur(3px);
+}
+
+.ad-text-container{
+    position: absolute;
+    top:30%;
+    text-align: center;
+}
+
+.ad-space-text{
+    font-family: 'Merienda One';
+    color:var(--latte);
+    font-size:x-large;
+}
