@@ -21,6 +21,8 @@ html{
     background-color: var(--espresso);
     display:flex;
     flex-direction: row;
+    justify-content: center;
+    padding:0.5rem;
     align-items: center;
     border-radius: 0rem 0rem 1rem 1rem;
     box-shadow:0px 5px 5px rgba(47, 47, 47, 0.5);
@@ -93,7 +95,7 @@ section{
 .menu-item-container > .menu-item-bg{
     border: 5px solid var(--cortado);
     z-index:1;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     position: absolute;
     width:80%;
     height:100%;
@@ -104,13 +106,13 @@ section{
 
 .menu-item-container > .product-photo{
     z-index:2;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     width:4rem;
     height:4rem;
 }
 
 .menu-item-container > .product-photo > img{
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     width:4rem;
     height:4rem;
 }
@@ -125,4 +127,47 @@ section{
 
 .separar-derecha{
     margin-right:2rem;
+}
+
+.input{
+    font-family: 'Merienda One',sans-serif;
+    font-size: 1rem;
+    width: 75%;
+    margin-left:2rem;
+    background-color: #cf9f6ed2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.input > input{
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
+    height: 1.5rem;
+    font-family: 'Merienda One',sans-serif;
+    font-size: 1rem;
+    border-bottom: 3px solid var(--darkcoffee);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+button{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border: none;
+    width: 80%;
+    margin-left:2rem;
+    border-radius: 0.5rem;
+    background-color: #cf9f6ed2;
+    font-size: 1rem;
+    font-family: 'Merienda One',sans-serif;
+    transition: background 200ms ease-in-out;
+}
+
+button:hover{
+    background-color: var(--latte);
+}
+
+button:active{
+    background-color: var(--cortado);
 }

@@ -11,7 +11,6 @@
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles.css">
     <script src="data.js"></script>
 </head>
@@ -52,7 +51,7 @@
         </section>
         <!-- PANES Y POSTRES -->
         <section id="panaderia">
-            <span style="display: flex;flex-direction: row;justify-content: center;"><h2 style="font-family:Arizonia;position:absolute;top:0.5rem;z-index:4;font-size:3rem">Los mejores panes y postres de toda francia!</h2></span>
+            <span style="display: flex;flex-direction: row;justify-content: center;"><h2 style="font-family:Arizonia;position:absolute;top:0.5rem;z-index:4;font-size:3rem">Los mejores panes y postres de toda Francia!</h2></span>
             <div class="menu-background-img">
                 <img width="100%" src="https://i.pinimg.com/originals/ab/85/8c/ab858c4baf3f0b119c368e81ed971e53.jpg" alt="bg" srcset="">
             </div>
@@ -66,11 +65,16 @@
                     src="https://www.planetware.com/wpimages/2019/05/france-paris-eiffel-tower-visiting-highlights-casual-meal-coffee-break.jpg"
                     alt="Le Café Parisien" srcset="">
             </div>
-            <div class="simple-text-container">
-                <span class="simple-space-text">Cafeteria "Le Café Parisien" cuenta con una variedad extensa de cafés y panes
-                    hechos en Paris por nuestros panaderos de alta calidad, donde usted podra disfrutar la exquisita
-                    gastronomía francesa, Bienveneu à la France !<br />Para mas información, consulte al +33-700-5552-67
-                    <br /> Nos encontramos localizados en 25 Place de la Madeleine Paris </span>
+            <div>
+                <span style="display: flex;flex-direction: row;justify-content: center;"><h2 style="font-family:Arizonia;position:absolute;top:0.5rem;z-index:4;font-size:3rem">Contactanos y haz tu pedido ahora!</h2></span>
+                <form style="position:absolute;top:5rem;width:100%;display: grid;gap:2rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr));text-align: center;">
+                    <div class="input"><label for="Nombre">Nombre: </label><input type="text" name="Nombre" id="Nombre"></div>
+                    <div class="input"><label for="Apellido">Apellido: </label><input type="text" name="Apellido" id="Apellido"></div>
+                    <div class="input"><label for="Identificacion">N° de Identidad: </label><input type="text" name="Identificacion" id="Identificacion"></div>
+                    <div class="input"><label for="Telefono">Teléfono de contacto: </label><input type="text" name="Telefono" id="Telefono"></div>
+                    <div class="input"><label for="Direccion">Donde te encuentras: </label><input type="text" name="Direccion" id="Direccion"></div>
+                    <button type="submit">Enviar información</button>
+                </form>
             </div>
         </section>
         <!-- PIE DE PAGINA -->
@@ -79,6 +83,7 @@
         </footer>
     </div>
     <script>
+        document.querySelector('button').addEventListener("click",e=>{e.preventDefault()})
         const menuCafe = document.getElementById('menu-cafes')
         for (const cafe of cafes) {
 
